@@ -1,0 +1,46 @@
+.filter_container {
+    display: flex;
+    gap: 70px;
+    justify-content: center;
+    width: 100%;
+
+    & .types_container {
+        display: flex;
+        align-items: center;
+        height: fit-content;
+        flex-direction: column;
+        gap: 10px;
+
+        & .types_content {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 10px;
+
+            & .type_button {
+                display: flex;
+                height: 30px;
+                align-items: center;
+                justify-content: center;
+                font-size: 16px;
+                border-radius: 15px;
+                color: black;
+                font-weight: bold;
+                cursor: pointer;
+
+                &.disabled {
+                    filter: grayscale(100%);
+                    opacity: 60%;
+                }
+            }
+        }
+
+        & .type_title {
+            color: var(--dark-blue);
+        }
+
+        & .weakness_title {
+            color: var(--dark-red);
+        }
+    }
+}
+

@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-blue: #003F4E;
+  --dark-red: #B50909;
+  --input-placeholder: rgb(31, 31, 31, 0.2);
+  --box-shadow: 0 0 5px var(--dark-blue);
+}
+
+html, body {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  background-image: url("/background.png");
+  background-size: cover;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  border: none;
+}
+
+h3 {
+  margin: 0;
+}
