@@ -5,11 +5,14 @@ import { PokemonDetails, PokemonURL } from "@/types/types";
 import { useEffect, useRef, useState, MouseEvent } from "react";
 import { Card } from "../card/Card";
 
-export const CardTable = () => {
+interface Props {
+    pokemonURL: PokemonURL[]
+}
+
+export const CardTable = ({ pokemonURL }: Props) => {
     const cardTableRef = useRef<HTMLDivElement>(null)
     const [ translate, setTranslate ] = useState<string>("")
     const [ pokemonDetails, setPokemonDetails ] = useState<PokemonDetails[]>([])
-    const [ pokemonURL, setPokemonURL ] = useState<PokemonURL[]>([])
     const [ requestStartIndex, setRequestStartIndex ] = useState<number>()
 
     const requestItems = 24
@@ -32,7 +35,7 @@ export const CardTable = () => {
     }
 
     async function getDetailedPokemons() {
-        if(requestStartIndex === undefined) return
+        if(requestStartIndex === undefined || !pokemonURL) return
         const cuttedPokemonURL = pokemonURL.slice(requestStartIndex, requestStartIndex + requestItems)
         const detailedPokemons = await Promise.all(
             cuttedPokemonURL.map(async (pokemon: { url: string }) => {
@@ -45,17 +48,9 @@ export const CardTable = () => {
         setPokemonDetails([...pokemonDetails, ...detailedPokemons])
     }
 
-    async function getPokemonURL() {
-        const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=2000", { next: { revalidate: 3600 } });
-        const data = await res.json();
-
-        setPokemonURL(data.results);
-        setRequestStartIndex(0)
-    }
-
     useEffect(() => {
-        getPokemonURL()
-    }, [])
+        setRequestStartIndex(0)
+    }, [pokemonURL])
 
     useEffect(() => {
         getDetailedPokemons()

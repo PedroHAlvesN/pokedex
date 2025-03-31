@@ -1,21 +1,23 @@
 import { CardTable } from "@/components/cardtable/CardTable"
 import { ActionTab } from "@/components/actiontab/ActionTab"
-import type { PokemonAPIResponse, PokemonType } from "@/types/types"
+import type { PokemonURL } from "@/types/types"
 import styles from "@/app/page.module.css"
 
-async function getPokemons(): Promise<PokemonAPIResponse> {
-  const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=20");
-  if (!res.ok) throw new Error("Erro ao buscar Pokémons");
-  return res.json()
+export async function getPokemonURL() {
+  const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=2000", { next: { revalidate: 3600 } });
+  const data = await res.json();
+
+  return data.results
 }
 
+
 export default async function Home() {
-  const pokemons = await getPokemons()
+  const pokemonURL: PokemonURL[] = await getPokemonURL()
 
   return (
     <div className={styles.content}>
-      <ActionTab />
-      <CardTable />
+      <ActionTab pokemonURL={pokemonURL} />
+      <CardTable pokemonURL={pokemonURL} />
     </div>
   );
 }

@@ -1,12 +1,17 @@
 'use client'
 
+import styles from "@/components/actiontab/ActionTab.module.css"
 import { Search } from "@/components/search/Search"
 import { Filter } from "@/components/filter/Filter"
-import { useState } from "react"
 import { actions } from "@/constants/constants"
-import styles from "@/components/actiontab/ActionTab.module.css"
+import { PokemonURL } from "@/types/types"
+import { useState } from "react"
 
-export const ActionTab = () => {
+interface Props {
+  pokemonURL: PokemonURL[]
+}
+
+export const ActionTab = ({ pokemonURL }: Props) => {
     const [ actionArray, setActionArray ] = useState(actions)
     const [ currentActionActive, setCurrentActionActive ] = useState<string>("search")
 
@@ -45,7 +50,7 @@ export const ActionTab = () => {
         <div className={styles.action_result}>
           {
             currentActionActive === "search"
-              ? <Search />
+              ? <Search pokemonURL={pokemonURL}/>
               : <Filter />
           }
         </div>
