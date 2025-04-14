@@ -4,9 +4,12 @@
 
 :root {
   --dark-blue: #003F4E;
+  --strong-blue: #0000ff;
+  --strong-red: #ff0000;
   --dark-red: #B50909;
   --input-placeholder: rgb(31, 31, 31, 0.2);
-  --box-shadow: 0 0 5px var(--dark-blue);
+  --box-shadow: 0 0 5px black;
+  --background-gradient: linear-gradient(45deg, #ff0000, #0000ff);
 }
 
 html, body {

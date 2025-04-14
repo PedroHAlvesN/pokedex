@@ -20,7 +20,7 @@
             position: relative;
             width: 40px;
             height: 40px;
-            background-color: var(--dark-blue);
+            background: var(--background-gradient);
             border-radius: 50%;
             transition: box-shadow 0.2s ease-in-out;
             cursor: pointer;
@@ -37,12 +37,8 @@
                 transition: 0.2s ease-in-out;
             }
 
-            &.active {
-                border: 2px solid black;
-
-                &::before {
-                    background-color: var(--dark-blue);
-                }
+            &.active::before {
+                background: var(--background-gradient);
             }
 
             &:hover {

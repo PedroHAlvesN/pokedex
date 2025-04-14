@@ -7,7 +7,7 @@
     padding: 10px;
     border: none;
     border-radius:  20px;
-    background-color: var(--dark-blue);
+    background: var(--background-gradient);
     height: 40px;
     color: white;
     font-size: 18px;
@@ -16,7 +16,7 @@
     transition: 0.2s ease-in-out;
 
     &.searching {
-        border-bottom: 1px solid white;
+        border-bottom: 1px solid black;
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
     }
@@ -35,7 +35,7 @@
     display: flex;
     opacity: 0;
     flex-direction: column;
-    background-color: var(--dark-blue);
+    background: linear-gradient(90deg, #ff0000, #0000ff);
     color: white;
     top: 100%;
     max-height: 200px;

@@ -35,11 +35,11 @@
         }
 
         & .type_title {
-            color: var(--dark-blue);
+            color: var(--strong-blue);
         }
 
         & .weakness_title {
-            color: var(--dark-red);
+            color: var(--strong-red);
         }
     }
 }

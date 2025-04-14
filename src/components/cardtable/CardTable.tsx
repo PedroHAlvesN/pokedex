@@ -36,12 +36,11 @@ export const CardTable = ({ pokemonURL }: Props) => {
 
     async function getDetailedPokemons() {
         if(requestStartIndex === undefined || !pokemonURL) return
-        const cuttedPokemonURL = pokemonURL.slice(requestStartIndex, requestStartIndex + requestItems)
+        const formattedPokemonURL = pokemonURL.slice(requestStartIndex, requestStartIndex + requestItems)
         const detailedPokemons = await Promise.all(
-            cuttedPokemonURL.map(async (pokemon: { url: string }) => {
+            formattedPokemonURL.map(async (pokemon: { url: string }) => {
                 const res = await fetch(pokemon.url);
                 return res.json() as Promise<PokemonDetails>;
-                
             })
         );
 
