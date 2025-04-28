@@ -15,7 +15,7 @@ export const CardTable = ({ pokemonURL }: Props) => {
     const [ pokemonDetails, setPokemonDetails ] = useState<PokemonDetails[]>([])
     const [ requestStartIndex, setRequestStartIndex ] = useState<number>()
 
-    const requestItems = 24
+    const requestItems = 15
 
     function moveCardTable(event: MouseEvent) {
         if(!cardTableRef.current) return
@@ -62,7 +62,6 @@ export const CardTable = ({ pokemonURL }: Props) => {
             className={styles.card_table_container}
             ref={cardTableRef}
             onMouseMove={moveCardTable}
-            onMouseLeave={() => setTranslate("translate(0, 0)")}
         >
             <div className={styles.card_table_content} style={{transform: translate}}>
                 {

@@ -1,5 +1,6 @@
 .filter_container {
     display: flex;
+    flex-direction: column;
     gap: 70px;
     justify-content: center;
     width: 100%;
@@ -13,7 +14,7 @@
 
         & .types_content {
             display: grid;
-            grid-template-columns: repeat(10, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 10px;
 
             & .type_button {

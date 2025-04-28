@@ -2,7 +2,11 @@ import styles from "@/components/filter/Filter.module.css"
 import { pokemonTypes, pokemonTypesComplete } from "@/constants/constants"
 import { useState } from "react"
 
-export const Filter = () => {
+interface Props {
+    type: string
+}
+
+export const Filter = ({ type = "types" }: Props) => {
     const [ types, setTypes ] = useState<string[]>(pokemonTypes)
     const [ weakness, setWeakness ] = useState<string[]>(pokemonTypes)
 

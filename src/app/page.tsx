@@ -1,5 +1,5 @@
 import { CardTable } from "@/components/cardtable/CardTable"
-import { ActionTab } from "@/components/actiontab/ActionTab"
+import { SidePanel } from "@/components/sidepanel/SidePanel"
 import type { PokemonURL } from "@/types/types"
 import styles from "@/app/page.module.css"
 
@@ -16,7 +16,7 @@ export default async function Home() {
 
   return (
     <div className={styles.content}>
-      <ActionTab pokemonURL={pokemonURL} />
+      <SidePanel pokemonURL={pokemonURL}/>
       <CardTable pokemonURL={pokemonURL} />
     </div>
   );

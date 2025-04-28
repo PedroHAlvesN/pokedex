@@ -3,6 +3,8 @@
 }
 
 :root {
+  --white: #ededed;
+  --gray: #d9d9d9;
   --dark-blue: #003F4E;
   --strong-blue: #0000ff;
   --strong-red: #ff0000;
