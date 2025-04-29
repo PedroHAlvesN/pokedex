@@ -2,8 +2,9 @@ import { CardTable } from "@/components/cardtable/CardTable"
 import { SidePanel } from "@/components/sidepanel/SidePanel"
 import type { PokemonURL } from "@/types/types"
 import styles from "@/app/page.module.css"
+import { use } from "react"
 
-export async function getPokemonURL() {
+async function getPokemonURL() {
   const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=2000", { next: { revalidate: 3600 } });
   const data = await res.json();
 
@@ -11,8 +12,8 @@ export async function getPokemonURL() {
 }
 
 
-export default async function Home() {
-  const pokemonURL: PokemonURL[] = await getPokemonURL()
+export default function Home() {
+  const pokemonURL: PokemonURL[] = use(getPokemonURL())
 
   return (
     <div className={styles.content}>
