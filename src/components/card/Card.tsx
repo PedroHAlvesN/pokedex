@@ -9,7 +9,7 @@ interface Props {
 export const Card = ({ pokemonDetails }: Props) => {
     return (
         <div className={styles.card_container}>
-            <img className={styles.mold} src="/mold.png"/>
+            <img draggable={false} className={styles.mold} src="/mold.png"/>
             <div className={styles.sprite_container}>
                 <img className={styles.sprite} src={pokemonDetails.sprites.front_default} alt={`${pokemonDetails.name} sprite`} />
             </div>

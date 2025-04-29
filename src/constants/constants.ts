@@ -54,3 +54,49 @@ export const pokemonTypesComplete: Record<string, PokemonTypeColor> = {
     "rock": { color: "#B8A038" },
     "dark": { color: "#705848" }
 }
+
+export const possibleCombinations: Record<string, string[]> =
+    {
+        normal: ["flying", "psychic", "ghost", "steel"],
+        fire: ["flying", "ground", "fighting", "ghost", "bug", "dragon", "rock", "steel"],
+        water: ["ground", "flying", "rock", "ghost", "dragon", "steel", "ice", "fighting", "bug", "fairy"],
+        grass: ["poison", "ground", "bug", "flying", "psychic", "dragon", "fairy"],
+        electric: ["steel", "bug", "flying", "ghost", "ground", "dragon", "normal"],
+        ice: ["water", "ground", "flying", "ghost", "fairy", "rock", "steel"],
+        fighting: ["flying", "rock", "psychic", "dark", "ghost", "steel", "fairy"],
+        poison: ["bug", "ground", "flying", "ghost", "rock", "fairy"],
+        ground: ["flying", "dragon", "steel", "ghost"],
+        flying: ["psychic", "dragon", "ghost"],
+        psychic: ["ghost", "fairy"],
+        bug: ["flying", "ground", "rock", "ghost", "dark", "grass", "steel"],
+        rock: ["ground", "flying", "ghost", "steel"],
+        ghost: ["dark", "dragon", "fairy"],
+        dragon: ["steel", "fairy"],
+        dark: ["ice", "fairy", "flying", "steel"],
+        steel: ["fairy"],
+        fairy: []
+    }
+
+export const weaknesses: Record<string, string[]> =
+    {
+        normal: ["fighting"],
+        fire: ["water", "ground", "rock"],
+        water: ["electric", "grass"],
+        grass: ["fire", "ice", "poison", "flying", "bug"],
+        electric: ["ground"],
+        ice: ["fire", "fighting", "rock", "steel"],
+        fighting: ["flying", "psychic", "fairy"],
+        poison: ["ground", "psychic"],
+        ground: ["water", "grass", "ice"],
+        flying: ["electric", "ice", "rock"],
+        psychic: ["bug", "ghost", "dark"],
+        bug: ["fire", "flying", "rock"],
+        rock: ["water", "grass", "fighting", "ground", "steel"],
+        ghost: ["ghost", "dark"],
+        dragon: ["ice", "dragon", "fairy"],
+        dark: ["fighting", "bug", "fairy"],
+        steel: ["fire", "fighting", "ground"],
+        fairy: ["poison", "steel"]
+    }
+      
+  

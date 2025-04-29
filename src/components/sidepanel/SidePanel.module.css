@@ -4,6 +4,8 @@
     width: 30%;
     height: 100%;
     background-color: var(--white);
+    background-image: url("/sidepanel_background.png");
+    background-size: cover;
 
     & .logo {
         margin-top: 50px;

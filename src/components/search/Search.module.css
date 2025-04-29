@@ -17,7 +17,6 @@
     transition: 0.2s ease-in-out;
 
     &.searching {
-        border-bottom: 1px solid black;
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
     }
@@ -40,15 +39,14 @@
     color: white;
     top: 100%;
     max-height: 200px;
-    min-height: 40px;
     width: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
     z-index: 2;
     transition: none;
-    padding: 5px 5px 10px 5px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     box-shadow: var(--box-shadow);
+    scrollbar-width: thin;
 
     &.show {
         opacity: 100%;
@@ -57,5 +55,11 @@
 
     & p {
         text-transform: capitalize;
+        padding-left: 6px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgba(0,0,0,0.2);
+        }
     }
 }
