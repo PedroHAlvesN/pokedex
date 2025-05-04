@@ -4,7 +4,6 @@ import styles from "@/components/sidepanel/SidePanel.module.css"
 import { Search } from "@/components/search/Search"
 import { Filter } from "@/components/filter/Filter"
 import { PokemonURL } from "@/types/types"
-import { useState } from "react"
 
 interface Props {
   pokemonURL: PokemonURL[]
@@ -14,7 +13,7 @@ export const SidePanel = ({ pokemonURL }: Props) => {
     return (
       <div className={styles.side_panel}>
           <div className={styles.filters}>
-            <a className={styles.logo} href="">
+            <a className={styles.logo} href="/">
               <img src="/logo.png" alt="Logo" />
             </a>
             <Search pokemonURL={pokemonURL}/>
