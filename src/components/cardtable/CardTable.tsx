@@ -1,18 +1,19 @@
 "use client"
 
+import { useEffect, useRef, useState, MouseEvent, Dispatch, SetStateAction } from "react"
 import styles from "@/components/cardtable/CardTable.module.css"
-import { PokemonDetails, PokemonURL } from "@/types/types";
-import { useEffect, useRef, useState, MouseEvent } from "react";
-import { Card } from "../card/Card";
+import { PokemonDetails, PokemonURL } from "@/types/types"
+import { Card } from "@/components/card/Card"
 
 interface Props {
     pokemonURL: PokemonURL[]
+    pokemonDetails: PokemonDetails[]
+    setPokemonDetails: Dispatch<SetStateAction<PokemonDetails[]>>
 }
 
-export const CardTable = ({ pokemonURL }: Props) => {
+export const CardTable = ({ pokemonURL, pokemonDetails, setPokemonDetails }: Props) => {
     const cardTableRef = useRef<HTMLDivElement>(null)
     const [ translate, setTranslate ] = useState<string>("")
-    const [ pokemonDetails, setPokemonDetails ] = useState<PokemonDetails[]>([])
     const [ requestStartIndex, setRequestStartIndex ] = useState<number>()
 
     const requestItems = 15

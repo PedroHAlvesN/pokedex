@@ -1,8 +1,7 @@
-import { CardTable } from "@/components/cardtable/CardTable"
-import { SidePanel } from "@/components/sidepanel/SidePanel"
+import Content from "@/components/content/Content"
 import type { PokemonURL } from "@/types/types"
-import styles from "@/app/page.module.css"
 import { use } from "react"
+
 
 async function getPokemonURL() {
   const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=2000", { next: { revalidate: 3600 } });
@@ -16,9 +15,6 @@ export default function Home() {
   const pokemonURL: PokemonURL[] = use(getPokemonURL())
 
   return (
-    <div className={styles.content}>
-      <SidePanel pokemonURL={pokemonURL}/>
-      <CardTable pokemonURL={pokemonURL} />
-    </div>
+    <Content pokemonURL={pokemonURL} />
   );
 }

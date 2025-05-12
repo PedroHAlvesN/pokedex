@@ -1,6 +1,6 @@
 import styles from "@/components/search/Search.module.css"
 import { PokemonURL } from "@/types/types"
-import { ChangeEvent, useEffect, useState } from "react"
+import { ChangeEvent, useState } from "react"
 
 interface Props {
     pokemonURL: PokemonURL[]
